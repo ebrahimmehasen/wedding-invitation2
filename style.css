@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    background: url("Untitled design p.jpg") center/cover no-repeat fixed;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    overflow-x: hidden;
+}
+
+.content {
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.top-title {
+    font-weight: 300;
+    letter-spacing: 2px;
+    font-size: clamp(10px, 2vw, 14px);
+    margin-bottom: clamp(15px, 4vh, 30px);
+    text-transform: uppercase;
+}
+
+.names {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(50px, 10vw, 110px);
+    font-weight: 400;
+    margin-bottom: clamp(30px, 6vh, 60px);
+    line-height: 1.1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    padding: 0 10px;
+    word-break: break-word;
+}
+
+.date-block {
+    margin-bottom: clamp(30px, 6vh, 50px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.month, .year {
+    font-size: clamp(16px, 3vw, 20px);
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.date-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0;
+    gap: clamp(10px, 3vw, 25px);
+    width: 100%;
+}
+
+.side-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.side-text hr {
+    width: clamp(35px, 10vw, 120px);
+    border: none;
+    border-top: 1.5px solid #ffffff;
+}
+
+.side-text span {
+    font-weight: 700;
+    font-size: clamp(10px, 2.2vw, 18px);
+    letter-spacing: clamp(1px, 0.5vw, 2px);
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.day-number {
+    font-size: clamp(40px, 8vw, 65px);
+    font-weight: 700;
+    line-height: 1;
+}
+
+.invite-text {
+    font-size: clamp(11px, 2.5vw, 16px);
+    font-weight: 600;
+    line-height: 1.6;
+    margin-bottom: clamp(25px, 5vh, 40px);
+    letter-spacing: 1px;
+    max-width: 95%;
+    text-transform: uppercase;
+}
+
+.location-details {
+    font-size: clamp(12px, 2.5vw, 15px);
+    font-weight: 300;
+    line-height: 1.8;
+    margin-bottom: clamp(25px, 5vh, 40px);
+    letter-spacing: 1px;
+}
+
+.countdown-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: clamp(10px, 2vw, 20px);
+    margin-bottom: clamp(25px, 5vh, 40px);
+    width: 100%;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.15);
+    padding: clamp(10px, 2vw, 15px);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    flex: 1 1 calc(25% - 20px);
+    min-width: 65px;
+    max-width: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.countdown-item span:first-child {
+    font-size: clamp(20px, 4vw, 32px);
+    font-weight: 700;
+}
+
+.countdown-item .label {
+    font-size: clamp(9px, 1.5vw, 12px);
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-top: 5px;
+    letter-spacing: 1px;
+}
+
+.location-btn {
+    display: inline-block;
+    padding: clamp(12px, 2vw, 18px) clamp(30px, 5vw, 45px);
+    background-color: transparent;
+    color: #ffffff;
+    text-decoration: none;
+    border: 2px solid #ffffff;
+    border-radius: 30px;
+    font-size: clamp(12px, 2vw, 14px);
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.location-btn:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* For very small mobile devices to prevent layout breaking */
+@media (max-width: 360px) {
+    .date-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .side-text hr {
+        display: none;
+    }
+    .countdown-item {
+        flex: 1 1 calc(50% - 15px); /* 2 items per row */
+    }
+}
