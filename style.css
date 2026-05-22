@@ -24,6 +24,7 @@ body {
     align-items: center;
     padding: 40px 20px;
     overflow-x: hidden;
+    animation: fadeIn 2s ease-out both;
 }
 
 .content {
@@ -51,6 +52,8 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
     padding: 0 10px;
     word-break: break-word;
+    animation: fadeInUp 1.2s cubic-bezier(0.25, 1, 0.5, 1) both;
+    animation-delay: 0.3s;
 }
 
 .date-block {
@@ -59,6 +62,8 @@ body {
     flex-direction: column;
     align-items: center;
     width: 100%;
+    animation: fadeInUp 1.2s cubic-bezier(0.25, 1, 0.5, 1) both;
+    animation-delay: 0.6s;
 }
 
 .month, .year {
@@ -87,6 +92,7 @@ body {
     width: clamp(35px, 10vw, 120px);
     border: none;
     border-top: 1.5px solid #ffffff;
+    transition: width 1s ease-in-out;
 }
 
 .side-text span {
@@ -111,6 +117,8 @@ body {
     letter-spacing: 1px;
     max-width: 95%;
     text-transform: uppercase;
+    animation: fadeInUp 1.2s cubic-bezier(0.25, 1, 0.5, 1) both;
+    animation-delay: 0.9s;
 }
 
 .location-details {
@@ -119,6 +127,8 @@ body {
     line-height: 1.8;
     margin-bottom: clamp(25px, 5vh, 40px);
     letter-spacing: 1px;
+    animation: fadeInUp 1.2s cubic-bezier(0.25, 1, 0.5, 1) both;
+    animation-delay: 1.2s;
 }
 
 .countdown-container {
@@ -128,6 +138,8 @@ body {
     gap: clamp(10px, 2vw, 20px);
     margin-bottom: clamp(25px, 5vh, 40px);
     width: 100%;
+    animation: fadeInUp 1.2s cubic-bezier(0.25, 1, 0.5, 1) both;
+    animation-delay: 1.5s;
 }
 
 .countdown-item {
@@ -144,6 +156,12 @@ body {
     min-width: 65px;
     max-width: 100px;
     border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.countdown-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.25);
 }
 
 .countdown-item span:first-child {
@@ -171,13 +189,38 @@ body {
     font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
     white-space: nowrap;
+    animation: fadeInUp 1.2s cubic-bezier(0.25, 1, 0.5, 1) both;
+    animation-delay: 1.8s;
 }
 
 .location-btn:hover {
     background-color: #ffffff;
     color: #000000;
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Animations Keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /* For very small mobile devices to prevent layout breaking */
